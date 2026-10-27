@@ -1,0 +1,60 @@
+================================================================================
+SpVAR COLOMBIA - Frontera Agrícola, Infraestructura Vial y Deforestación
+Econometría Espacial Profesional (PySAL / spreg / geopandas / Gradio)
+Código completo corregido - Listo para Google Colab
+================================================================================
+
+INSTRUCCIONES RÁPIDAS
+---------------------
+1. Abra Google Colab (https://colab.research.google.com)
+2. Cree un nuevo notebook
+3. Copie y pegue TODO el contenido del archivo .py
+4. Ejecute la celda (Runtime → Run all)
+5. Espere a que se instalen las librerías y se generen los resultados
+6. La interfaz Gradio se abrirá automáticamente con un enlace público
+
+DEPENDENCIAS PRINCIPALES
+------------------------
+- libpysal, geopandas, esda, spreg
+- matplotlib, seaborn, plotly
+- gradio
+- pandas, numpy, scipy, statsmodels, scikit-learn
+
+FUENTES DE DATOS OFICIALES RECOMENDADAS
+---------------------------------------
+- Deforestación / pérdida de bosque: IDEAM SMByC, Global Forest Watch, MapBiomas Colombia
+- Valor Agregado Agrícola: DANE – Cuentas Nacionales Departamentales (rama Agricultura, ganadería, caza, silvicultura y pesca)
+- Densidad / longitud de red vial: INVIAS + DNP
+- Proxy satelital: VIIRS nighttime lights (WorldPop / EOG) o alertas FIRMS agregadas a nivel departamental
+- GeoJSON departamentos: https://raw.githubusercontent.com/caticoa3/colombia_mapa/master/co_2018_MGN_DPTO_POLITICO.geojson
+
+NOTAS IMPORTANTES
+-----------------
+- El panel de datos incluido es de referencia (orden de magnitud real). 
+  Debe reemplazarse por series oficiales completas para análisis de producción.
+- El modelo implementa selección empírica de estructura espacial (SAR / SEM / SAC-SDM) 
+  mediante pruebas de Multiplicadores de Lagrange.
+- Se calculan efectos directos e indirectos (spillovers espaciales).
+- Incluye mapas coropléticos, visualización 3D interactiva y aplicación Gradio.
+
+ESTRUCTURA DEL SCRIPT
+---------------------
+1. Instalación de dependencias
+2. Carga del GeoJSON oficial de departamentos de Colombia
+3. Construcción / carga del panel espacio-temporal
+4. Construcción y selección de la matriz de pesos espaciales W (Queen vs Rook)
+5. Preparación de datos para el sistema SpVAR
+6. Selección empírica de modelo espacial por ecuación (LM tests)
+7. Cálculo de impactos directos, indirectos y totales
+8. Generación de mapas coropléticos y gráfico 3D
+9. Auditoría interna de robustez
+10. Lanzamiento de la aplicación interactiva Gradio
+
+CÓDIGO COMPLETO
+---------------
+(El código completo se encuentra en el archivo spvar_colombia_completo.py)
+
+Para ejecutarlo localmente o en Colab, use preferiblemente el archivo .py.
+
+Fin del archivo de texto.
+================================================================================
